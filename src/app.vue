@@ -1,32 +1,19 @@
 <template>
     <div>
-        hello word
-        <home />
-        <div class="icon">
-            <span @click="onClick">{{a}}</span>
-            <svg-icon iconName="bug" class-name="red"></svg-icon>
-            <!-- <svg class="icon" aria-hidden="true" focusable="false">
-                <use xlink:href="#icon-bug" />
-            </svg>-->
-        </div>
+        <!-- <home /> -->
+
+        <!-- <svg-icon iconName="bug" class-name="red"></svg-icon> -->
+        <w-form></w-form>
     </div>
 </template>
 
 <script>
-// import "./icon/bug.svg";
-import home from "@/components/home";
+import WForm from "./components/form";
 export default {
-    data() {
-        return { a: 1123 };
-    },
     components: {
-        home,
+        WForm,
     },
-    methods: {
-        onClick() {
-            this.a += 1;
-        },
-    },
+    methods: {},
 };
 </script>
 

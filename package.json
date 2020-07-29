@@ -33,6 +33,7 @@
     "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
+    "async-validator": "^3.3.0",
     "vue": "^2.6.11"
   }
 }

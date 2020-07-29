@@ -11,7 +11,6 @@ const requireAll = requireContext => requireContext.keys().map(item => {
 
 const req = require.context('./icon', false, /\.svg$/)
 requireAll(req)
-console.log(catchs)
 
 let app = new Vue({
     el: '#app',
