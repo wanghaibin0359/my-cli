@@ -1,0 +1,1 @@
+const requireAll = requireContext=requireContext.keys()
