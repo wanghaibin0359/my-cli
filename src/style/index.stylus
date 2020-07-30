@@ -1,4 +1,6 @@
 body
     background #eee
+    height calc(100vh - 4em)
+    position relative
 ul, li
     list-style none

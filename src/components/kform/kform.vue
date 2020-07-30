@@ -27,10 +27,10 @@ export default {
                 .map((child) => child.validate());
             Promise.all(task)
                 .then((res) => {
-                    console.log("验证成功！")
+                    fn(true);
                 })
                 .catch((e) => {
-                    console.log("验证失败！")
+                    fn(false);
                 });
         },
     },

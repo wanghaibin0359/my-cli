@@ -4,6 +4,9 @@
 
         <!-- <svg-icon iconName="bug" class-name="red"></svg-icon> -->
         <w-form></w-form>
+        <router-link to="/home" tag="button" class="aaa" style="color:red" @click="clicks">home</router-link>
+        <router-link to="/other" tag="button">other</router-link>
+        <router-view />
     </div>
 </template>
 
@@ -13,7 +16,11 @@ export default {
     components: {
         WForm,
     },
-    methods: {},
+    methods: {
+        clicks() {
+            console.log("click");
+        },
+    },
 };
 </script>
 

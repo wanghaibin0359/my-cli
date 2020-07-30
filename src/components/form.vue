@@ -17,6 +17,7 @@
 import KForm from "./kform/Kform";
 import KInput from "./kform/KInput";
 import KItem from "./kform/KItem";
+
 export default {
     components: { KForm, KInput, KItem },
     data() {
@@ -38,11 +39,16 @@ export default {
     },
     methods: {
         submit() {
+            let pop = this.$create({
+                title: "alskjdhfk",
+                message: "asdfasfdsdf",
+            });
+            pop.show();
             this.$refs.form.validate((valid) => {
                 if (valid) {
                     console.log("提交成功");
                 } else {
-                    console.err("失败");
+                     console.log("失败");
                 }
             });
         },

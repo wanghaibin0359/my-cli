@@ -96,6 +96,9 @@ module.exports = {
         new MiniCssExtractPlugin({
             filename: 'css/[name]-[contenthash:4].css'
         }),
-        new VueLoaderPlugin()
+        new VueLoaderPlugin(),
+        new webpack.DefinePlugin({
+            'Vue': 'vue'
+        })
     ]
 }

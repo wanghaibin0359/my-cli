@@ -4,9 +4,7 @@
 
 <script>
 export default {
-    inject: ["form"],
     created() {
-        console.log(this.form);
     },
 };
 </script>
