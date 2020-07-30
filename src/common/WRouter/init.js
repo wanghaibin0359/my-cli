@@ -5,18 +5,38 @@ export default class VueRouter {
     constructor(opts) {
         this.$opts = opts
         Vue.util.defineReactive(this, 'current', '/')
+        Vue.util.defineReactive(this, 'matched', [])
 
         let initial = window.location.hash.slice(1) | '/'
-        this.current = initial
-
+        // this.current = initial
+        this.match()
         window.addEventListener('load', this.change.bind(this))
         window.addEventListener('hashchange', this.change.bind(this))
     }
     change() {
         this.current = window.location.hash.slice(1)
-        console.log('change ')
+        this.matched = []
+        this.match()
     }
+    match(routes, prePath) {
+        routes = routes || this.$opts.routes
+        for (const route of routes) {
+            if (this.current == '/' && route.path == '/') {
+                this.matched.push(route)
+                return
+            }
+            let path = prePath ? (prePath + '/' + route.path) : route.path
+            console.log(path)
+            if (route.path != '/' && this.current.indexOf(path) > -1) {
+                this.matched.push(route)
+                if (route.children) {
+                    this.match(route.children, path)
+                    return
+                }
+            }
+        }
 
+    }
 }
 
 VueRouter.install = (_Vue) => {

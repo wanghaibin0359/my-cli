@@ -10,17 +10,23 @@ import WRouter from '@/common/WRouter/init'
 import Other from '@/components/other'
 Vue.use(WRouter)
 Vue.component('svg-icon', SvgIcon)
-// require.context('./icon', false, /\.svg$/)
 let catchs = {};
 const requireAll = requireContext => requireContext.keys().map(item => {
     catchs[item] = requireContext(item)
 })
 const req = require.context('./icon', false, /\.svg$/)
 requireAll(req)
-
 let routes = [
     { path: "/home", component: require('@/components/home') },
     { path: "/other", component: Other },
+    {
+        path: "/parent",
+        component: require('@/components/parent/index'),
+        children: [
+            { path: 'child2', component: require('@/components/parent/child2') },
+            { path: 'child1', component: require('@/components/parent/child1') },
+        ]
+    },
 ]
 let router = new WRouter({
     routes

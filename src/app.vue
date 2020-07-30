@@ -6,6 +6,7 @@
         <w-form></w-form>
         <router-link to="/home" tag="button" class="aaa" style="color:red" @click="clicks">home</router-link>
         <router-link to="/other" tag="button">other</router-link>
+        <router-link to="/parent" tag="button">parent</router-link>
         <router-view />
     </div>
 </template>
