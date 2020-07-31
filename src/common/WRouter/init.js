@@ -11,12 +11,16 @@ export default class VueRouter {
         // this.current = initial
         this.match()
         window.addEventListener('load', this.change.bind(this))
-        window.addEventListener('hashchange', this.change.bind(this))
+        window.addEventListener('popstate', this.change.bind(this))
     }
     change() {
         this.current = window.location.hash.slice(1)
+        this.$opts.mode && this.$opts.mode == 'history' && this.pushState()
         this.matched = []
         this.match()
+    }
+    pushState() {
+        window.history.pushState({ key: this.current }, null, this.current)
     }
     match(routes, prePath) {
         routes = routes || this.$opts.routes

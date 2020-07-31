@@ -29,6 +29,7 @@ let routes = [
     },
 ]
 let router = new WRouter({
+    mode: "history",
     routes
 })
 
