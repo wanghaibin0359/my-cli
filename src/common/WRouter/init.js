@@ -26,7 +26,6 @@ export default class VueRouter {
                 return
             }
             let path = prePath ? (prePath + '/' + route.path) : route.path
-            console.log(path)
             if (route.path != '/' && this.current.indexOf(path) > -1) {
                 this.matched.push(route)
                 if (route.children) {

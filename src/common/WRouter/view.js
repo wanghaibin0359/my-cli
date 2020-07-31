@@ -23,13 +23,12 @@ export default {
         const curmatched = matched[dept]
 
         component = curmatched && curmatched.component
-        if(dept==1){debugger}
+       
         if (component && component.default) {
             component = component.default
         } else if (typeof component === 'function') {
             component = component()
         }
-        console.log(component)
         return h(component ? component : null)
     }
 }
