@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <button v-on:click="increment">+</button>
+        <div >    basd{{a}}  ddd</div>
+        <div v-text="a">  </div>
+    </div>
+</body>
+<script src="observer.js"></script>
+<script src="compile.js"></script>
+<script src="watch.js"></script>
+<script src="index.js"></script>
+<script>
+    let wvue = new Wvue({
+        el: "#app",
+        data: {
+            a: 1111,
+            b: 'ass'
+        },
+        methods: {
+            increment() {
+                console.log(1)
+                this.a += 1
+            }
+        }
+    })
+
+
+</script>
+
+</html>
